@@ -4,9 +4,11 @@
 dist/*
 coverage/*
 public/*
+data/*
 database/*
 .gitlab/*
 .github/*
+
 
 # Ignore files test
 *.spec.js

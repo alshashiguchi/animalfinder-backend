@@ -152,7 +152,7 @@ module.exports = {
       }
 
       return true;
-    }
+    };
 
     await server.decorate('request', 'imageFilter', imageFilter);
     await server.decorate('request', 'removeFileAws', removeFileAws);

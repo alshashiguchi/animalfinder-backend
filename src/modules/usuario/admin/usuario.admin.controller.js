@@ -3,7 +3,7 @@
 const logs = require('../../../core/utils/logger');
 const { getAttributes: attributesUsuario } = require('../usuario.schema');
 
-const list = async (request, response) => {     
+const list = async (request, reply) => {     
   try {
     const { Usuarios } = request.database;  
   
