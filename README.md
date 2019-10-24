@@ -4,6 +4,18 @@ Projeto foi dividido nas partes abaixo:
 
   - API Desenvolvida em NodeJS versão 10.16.3, utilizando banco de dados de Postgres e Redis 
 
+         
+  - Está utlizando as seguintes tecnologias tratados os seguintes pontos:       
+       -  Segurança:
+          - JWT.
+          - bcrypt.
+          - Sequelize ORM.
+          - Sanitização de Querys, Params e Payloads.
+          - Tratamento de Brute Force com bloqueio de acesso em 6 tentativas por minuto ou 101 no dia.
+       -  Framework Hapi
+       -  A imagem da API foi disponibilizada no Dockerhub.
+       -  Foi utilizado o S3 da Amazon para armazenar as imagens. 
+
 # API
 
   ```bash
@@ -34,17 +46,13 @@ Projeto foi dividido nas partes abaixo:
     └── img
 
   ```
-       
-  - Está utlizando as seguintes tecnologias tratados os seguintes pontos:       
-       -  Segurança:
-          - JWT.
-          - bcrypt.
-          - Sequelize ORM.
-          - Sanitização de Querys, Params e Payloads.
-          - Tratamento de Brute Force com bloqueio de acesso em 6 tentativas por minuto ou 101 no dia.
-       -  Framework Hapi
-       -  A imagem da API foi disponibilizada no Dockerhub.
-       -  Foi utilizado o S3 da Amazon para armazenar as imagens.
+  - **coverage**: ao executar o comando `yarn test-report` nessa pasta é gerado o relatório de coverage.
+  - **database**: arquivos referente ao banco de dados como as `migrations` e `seeders`.
+  - **script**: scripts do sistema.
+  - **src**
+    - **core**: Arquivos do framework.
+    - **models**: Modelos do ORM.
+    - **modules**: Arquivos da API REST.
 
 ### Instalação
 
@@ -74,7 +82,8 @@ $ yarn test
 ```sh
 $ sudo docker-compose up -d
 ```
-A Imagem da API foi disponibilizada no Docker Hub [alshashiguchi/animalfinder](https://hub.docker.com/r/alshashiguchi/animalfinder)
+A Imagem da API foi disponibilizada no Docker Hub [API](https://hub.docker.com/r/alshashiguchi/animalfinder) e [PostgreSQL](https://hub.docker.com/r/alshashiguchi/postgresanimalfinder)
+
 ### Documentação
 
 Link para a documentação http://localhost:3000/v1/docs
