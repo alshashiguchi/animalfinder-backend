@@ -1,0 +1,68 @@
+version: "2"
+services:
+  animalfinder:
+    image: alshashiguchi/animalfinder
+    container_name: animalFinderAPP
+    environment:
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=3000
+      - DATABASE_HOST=10.5.0.5
+      - DATABASE_PORT=5432
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=animalFinder2019**
+      - DATABASE_NAME=animal_finder
+      - KEYAUTH=
+      - REDIS_HOST=10.5.0.6
+      - REDIS_PORT=6379
+      - NODE_ENV=development
+      - ELK_HOST=http://0.0.0.0:5000
+      - ELK_ENABLED=false
+      - AWS_ID=
+      - AWS_KEY=
+    restart: unless-stopped        
+    ports:
+      - "3000:3000"
+    links:
+      - postgressql
+      - redis
+    networks:
+      netAnimalFinder:
+        ipv4_address: 10.5.0.4
+    depends_on:
+       - postgressql
+       - redis
+
+    
+  postgressql:
+    container_name: postgresAnimalFinder
+    image: alshashiguchi/postgresanimalfinder
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    restart: unless-stopped
+    ports:
+      - "25000:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=animalFinder2019**
+      - POSTGRES_DB=animal_finder
+    networks:
+      netAnimalFinder:
+        ipv4_address: 10.5.0.5
+
+  redis:
+    container_name: redisAnimalFinder
+    image: redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      netAnimalFinder:
+        ipv4_address: 10.5.0.6
+
+networks:
+  netAnimalFinder:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1

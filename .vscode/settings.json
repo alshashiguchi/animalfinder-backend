@@ -1,0 +1,31 @@
+{
+  "sqltools.connections": [
+    {
+      "database": "aula_hashi",
+      "dialect": "PostgreSQL",
+      "name": "teste",
+      "password": "docker",
+      "port": 5432,
+      "server": "192.168.0.18",
+      "username": "onclick"
+    },
+    {
+      "database": "aula_hashi",
+      "dialect": "PostgreSQL",
+      "name": "local",
+      "password": "Postgres2018!",
+      "port": 5432,
+      "server": "localhost",
+      "username": "postgres"
+    },
+    {
+      "database": "aula_hashi_teste",
+      "dialect": "PostgreSQL",
+      "name": "local teste",
+      "password": "Postgres2018!",
+      "port": 5432,
+      "server": "localhost",
+      "username": "postgres"
+    }
+  ]
+}

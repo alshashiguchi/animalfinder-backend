@@ -1,0 +1,12 @@
+# /node_modules/ and /bower_components/ ignored by default
+
+# Ignore build directory
+dist/*
+coverage/*
+public/*
+database/*
+.gitlab/*
+.github/*
+
+# Ignore files test
+*.spec.js
