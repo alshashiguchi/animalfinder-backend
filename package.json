@@ -44,7 +44,7 @@
     "pg-hstore": "^2.3.3",
     "rate-limiter-flexible": "^1.1.6",
     "redis": "^2.8.0",
-    "sequelize": "^4.38.1",
+    "sequelize": "^5.15.1",
     "sequelize-cli": "^4.1.1",    
     "uuid": "^3.3.3",
     "vision": "^5.4.4",
